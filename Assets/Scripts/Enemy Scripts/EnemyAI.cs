@@ -7,7 +7,9 @@ using UnityEngine.AI;
 public class EnemyAI : MonoBehaviour
 {
     [SerializeField] Transform target;
-    [SerializeField] float chaseRange = 5f;
+    [SerializeField] float provokeRange = 5f;
+    [SerializeField] float speed = 1f;
+    Animator anim;
     float distanceToTarget = Mathf.Infinity;
     NavMeshAgent agent;
     bool isProvoked = false;
@@ -15,6 +17,7 @@ public class EnemyAI : MonoBehaviour
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
+        anim = GetComponent<Animator>();
     }
 
     private void Update()
@@ -27,16 +30,17 @@ public class EnemyAI : MonoBehaviour
         distanceToTarget = Vector3.Distance(target.position, transform.position);
         if (isProvoked)
         {
-            EngageTarget();
+            EngageTarget(distanceToTarget);
         }
-        else if (distanceToTarget <= chaseRange)
+        else if (distanceToTarget <= provokeRange)
         {
             isProvoked = true;
         }
     }
 
-    private void EngageTarget()
+    private void EngageTarget(float distanceToTarget)
     {
+        FaceTarget();
         if (distanceToTarget >= agent.stoppingDistance)
         {
             ChaseTarget();
@@ -46,20 +50,28 @@ public class EnemyAI : MonoBehaviour
             AttackTarget();
         }
     }
-
+    private void FaceTarget()
+    {
+        Vector3 direction = (target.position - transform.position).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * speed);
+    }
     private void ChaseTarget()
     {
         agent.SetDestination(target.position);
+        anim.SetTrigger("Move");
     }
 
     private void AttackTarget()
     {
-        throw new NotImplementedException();
+        anim.SetTrigger("Attack");
     }
+
+
 
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, chaseRange);
+        Gizmos.DrawWireSphere(transform.position, provokeRange);
     }
 }
