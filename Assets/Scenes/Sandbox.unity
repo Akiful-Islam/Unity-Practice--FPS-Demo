@@ -308,24 +308,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &845810803 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 97627543988933783, guid: 623259de510a3224481ba840145b6639, type: 3}
-  m_PrefabInstance: {fileID: 97627544338342245}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &845810808
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 845810803}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c99752ba2eaeff14ebd8a81785e0ad99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameOverCanvas: {fileID: 1135993456}
 --- !u!1 &875842179
 GameObject:
   m_ObjectHideFlags: 0
@@ -834,7 +816,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1135993453
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1462,6 +1444,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 845810808, guid: 623259de510a3224481ba840145b6639, type: 3}
+      propertyPath: gameOverCanvas
+      value: 
+      objectReference: {fileID: 1135993456}
     - target: {fileID: 97627543988933783, guid: 623259de510a3224481ba840145b6639, type: 3}
       propertyPath: m_Name
       value: Player

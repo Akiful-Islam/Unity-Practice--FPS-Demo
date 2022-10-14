@@ -61,7 +61,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 90
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -182,6 +182,9 @@ GameObject:
   - component: {fileID: 97627543977269041}
   - component: {fileID: 97627543983448437}
   - component: {fileID: 8674322857988149352}
+  - component: {fileID: 845810808}
+  - component: {fileID: 845810809}
+  - component: {fileID: 845810810}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -317,6 +320,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+--- !u!114 &845810808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97627543988933783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c99752ba2eaeff14ebd8a81785e0ad99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOverCanvas: {fileID: 0}
+--- !u!114 &845810809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97627543988933783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 802764dd07922034bbd286a10ff17cb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCamera: {fileID: 0}
+  zoomedInFOV: 80
+  zoomedInSensitivity: 1.9
+--- !u!114 &845810810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97627543988933783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0de6761efddbba84fb833249008826cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ammoAmount: 20
 --- !u!1 &2890311826327976913
 GameObject:
   m_ObjectHideFlags: 0
@@ -366,7 +410,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1238707657091488164, guid: 91892ef28a4b8bf4682636ebf2fd8c1a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.4
+      value: 0.56
       objectReference: {fileID: 0}
     - target: {fileID: 1238707657091488164, guid: 91892ef28a4b8bf4682636ebf2fd8c1a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -374,7 +418,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1238707657091488164, guid: 91892ef28a4b8bf4682636ebf2fd8c1a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.9
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 1238707657091488164, guid: 91892ef28a4b8bf4682636ebf2fd8c1a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -404,6 +448,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6550205139557581597, guid: 91892ef28a4b8bf4682636ebf2fd8c1a, type: 3}
+      propertyPath: ammoSlot
+      value: 
+      objectReference: {fileID: 845810810}
     - target: {fileID: 6550205139557581597, guid: 91892ef28a4b8bf4682636ebf2fd8c1a, type: 3}
       propertyPath: playerCamera
       value: 
