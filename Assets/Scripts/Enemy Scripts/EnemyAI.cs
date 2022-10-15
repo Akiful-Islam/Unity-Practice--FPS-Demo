@@ -10,19 +10,31 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] float provokeRange = 5f;
     [SerializeField] float speed = 1f;
     Animator anim;
-    float distanceToTarget = Mathf.Infinity;
     NavMeshAgent agent;
+    EnemyHealth health;
+    float distanceToTarget = Mathf.Infinity;
     bool isProvoked = false;
 
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
+        health = GetComponent<EnemyHealth>();
     }
 
     private void Update()
     {
+        CheckHealth();
         SeekAndDestroy();
+    }
+
+    private void CheckHealth()
+    {
+        if (health.IsDead)
+        {
+            enabled = false;
+            agent.enabled = false;
+        }
     }
 
     private void SeekAndDestroy()

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,8 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] float health = 100;
+    bool isDead = false;
+    public bool IsDead { get => isDead; }
 
     public void TakeDamage(float damage)
     {
@@ -14,7 +17,17 @@ public class EnemyHealth : MonoBehaviour
         health -= damage;
         if (health <= 0)
         {
-            Destroy(gameObject);
+            KillEnemy();
         }
     }
+
+    private void KillEnemy()
+    {
+        if (isDead)
+            return;
+
+        isDead = true;
+        GetComponent<Animator>().SetTrigger("Die");
+    }
+
 }
