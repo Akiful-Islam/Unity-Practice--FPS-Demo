@@ -1444,10 +1444,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 103295366, guid: 623259de510a3224481ba840145b6639, type: 3}
-      propertyPath: currentWeaponIndex
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 845810808, guid: 623259de510a3224481ba840145b6639, type: 3}
       propertyPath: gameOverCanvas
       value: 

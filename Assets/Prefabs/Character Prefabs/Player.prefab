@@ -344,7 +344,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0de6761efddbba84fb833249008826cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammoAmount: 20
+  ammoSlots:
+  - ammoType: 0
+    ammoAmount: 30
+  - ammoType: 1
+    ammoAmount: 10
+  - ammoType: 2
+    ammoAmount: 5
 --- !u!1 &2890311826327976913
 GameObject:
   m_ObjectHideFlags: 0
@@ -393,7 +399,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dfc5b274ee4e60449163636e78bed30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentWeaponIndex: 0
+  currentWeaponIndex: 2
 --- !u!1001 &4102229678092747686
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -404,10 +410,6 @@ PrefabInstance:
     - target: {fileID: 1238707657091122564, guid: 43a0d78756401eb4f8190bc5d11846ad, type: 3}
       propertyPath: m_Name
       value: Rocket Launcher
-      objectReference: {fileID: 0}
-    - target: {fileID: 1238707657091122564, guid: 43a0d78756401eb4f8190bc5d11846ad, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1238707657091488164, guid: 43a0d78756401eb4f8190bc5d11846ad, type: 3}
       propertyPath: m_RootOrder
@@ -465,10 +467,6 @@ PrefabInstance:
       propertyPath: ammoSlot
       value: 
       objectReference: {fileID: 845810810}
-    - target: {fileID: 6550205139557581597, guid: 43a0d78756401eb4f8190bc5d11846ad, type: 3}
-      propertyPath: shotDelay
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 6550205139557581597, guid: 43a0d78756401eb4f8190bc5d11846ad, type: 3}
       propertyPath: playerCamera
       value: 
@@ -654,10 +652,6 @@ PrefabInstance:
     - target: {fileID: 1238707657091122564, guid: c1049bff32c7770438fd6dc98e1c6d62, type: 3}
       propertyPath: m_Name
       value: Carbine
-      objectReference: {fileID: 0}
-    - target: {fileID: 1238707657091122564, guid: c1049bff32c7770438fd6dc98e1c6d62, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1238707657091488164, guid: c1049bff32c7770438fd6dc98e1c6d62, type: 3}
       propertyPath: m_RootOrder

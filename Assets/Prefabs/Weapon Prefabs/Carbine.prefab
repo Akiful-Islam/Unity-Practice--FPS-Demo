@@ -218,7 +218,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1238707657091488164
 Transform:
   m_ObjectHideFlags: 0
@@ -303,11 +303,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 0}
-  range: 80
-  damage: 20
   muzzleFlash: {fileID: 3686898535908366025}
   hitEffect: {fileID: 100006, guid: 0438351a6e6422d43a09930e9be00ee9, type: 3}
   ammoSlot: {fileID: 0}
+  ammoType: 0
+  range: 80
+  damage: 20
   shotDelay: 0.75
 --- !u!114 &253976748512281073
 MonoBehaviour:
@@ -323,8 +324,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 0}
   playerController: {fileID: 0}
-  zoomedInFOV: 80
-  zoomedInSensitivity: 1.9
+  zoomInFOV: 60
+  zoomInSensitivity: 1.7
 --- !u!1 &1238707657091122566
 GameObject:
   m_ObjectHideFlags: 0

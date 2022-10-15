@@ -8,17 +8,20 @@ public class WeaponZoom : MonoBehaviour
 {
     [SerializeField] Camera playerCamera;
     [SerializeField] RigidbodyFirstPersonController playerController;
-    [SerializeField] float zoomedInFOV = 80f;
-    float zoomedOutFOV;
-    [SerializeField] float zoomedInSensitivity = 1.9f;
-    float zoomedOutSensitivity;
+    [SerializeField] float zoomInFOV = 80f;
+    float zoomOutFOV;
+    [SerializeField] float zoomInSensitivity = 1.9f;
+    float zoomOutSensitivity;
     bool isZoomedIn = false;
 
-
+    private void OnDisable()
+    {
+        ZoomOut();
+    }
     private void Awake()
     {
-        zoomedOutFOV = playerCamera.fieldOfView;
-        zoomedOutSensitivity = playerController.mouseLook.XSensitivity;
+        zoomOutFOV = playerCamera.fieldOfView;
+        zoomOutSensitivity = playerController.mouseLook.XSensitivity;
         playerController = GetComponent<RigidbodyFirstPersonController>();
     }
     private void Update()
@@ -27,20 +30,29 @@ public class WeaponZoom : MonoBehaviour
         {
             if (isZoomedIn)
             {
-                HandleZoom(false, zoomedOutFOV, zoomedOutSensitivity);
+                ZoomOut();
             }
             else
             {
-                HandleZoom(true, zoomedInFOV, zoomedInSensitivity);
+                ZoomIn();
             }
         }
     }
 
-    private void HandleZoom(bool zoomToggle, float fov, float sensitivity)
+    private void ZoomIn()
     {
-        isZoomedIn = zoomToggle;
-        playerCamera.fieldOfView = fov;
-        playerController.mouseLook.XSensitivity = sensitivity;
-        playerController.mouseLook.YSensitivity = sensitivity;
+        isZoomedIn = true;
+        playerCamera.fieldOfView = zoomInFOV;
+        playerController.mouseLook.XSensitivity = zoomInSensitivity;
+        playerController.mouseLook.YSensitivity = zoomInSensitivity;
+
+    }
+
+    private void ZoomOut()
+    {
+        isZoomedIn = false;
+        playerCamera.fieldOfView = zoomOutFOV;
+        playerController.mouseLook.XSensitivity = zoomOutSensitivity;
+        playerController.mouseLook.YSensitivity = zoomOutSensitivity;
     }
 }
