@@ -22,7 +22,6 @@ public class WeaponZoom : MonoBehaviour
     {
         zoomOutFOV = playerCamera.fieldOfView;
         zoomOutSensitivity = playerController.mouseLook.XSensitivity;
-        playerController = GetComponent<RigidbodyFirstPersonController>();
     }
     private void Update()
     {

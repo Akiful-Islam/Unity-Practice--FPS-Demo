@@ -59,7 +59,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.2
   far clip plane: 1000
   field of view: 90
   orthographic: 0
@@ -186,7 +186,7 @@ GameObject:
   - component: {fileID: 845810810}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -351,6 +351,8 @@ MonoBehaviour:
     ammoAmount: 10
   - ammoType: 2
     ammoAmount: 5
+  - ammoType: 3
+    ammoAmount: 50
 --- !u!1 &2890311826327976913
 GameObject:
   m_ObjectHideFlags: 0
