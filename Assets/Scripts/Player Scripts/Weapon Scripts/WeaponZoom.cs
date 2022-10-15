@@ -7,12 +7,13 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class WeaponZoom : MonoBehaviour
 {
     [SerializeField] Camera playerCamera;
+    [SerializeField] RigidbodyFirstPersonController playerController;
     [SerializeField] float zoomedInFOV = 80f;
     float zoomedOutFOV;
     [SerializeField] float zoomedInSensitivity = 1.9f;
     float zoomedOutSensitivity;
     bool isZoomedIn = false;
-    RigidbodyFirstPersonController playerController;
+
 
     private void Awake()
     {
