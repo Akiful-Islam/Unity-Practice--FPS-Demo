@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
@@ -13,6 +14,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] float range = 100f;
     [SerializeField] float damage = 30f;
     [SerializeField] float shotDelay = 0.5f;
+    [SerializeField] TextMeshProUGUI ammoText;
     bool canShoot = true;
 
     private void OnEnable()
@@ -22,7 +24,10 @@ public class Weapon : MonoBehaviour
     void Update()
     {
         HandleShooting();
+        UpdateAmmoText();
     }
+
+
 
     private void HandleShooting()
     {
@@ -79,5 +84,10 @@ public class Weapon : MonoBehaviour
         if (target == null)
             return;
         target.TakeDamage(damage);
+    }
+    private void UpdateAmmoText()
+    {
+        int currentAmmo = ammoSlot.GetCurrentAmmo(ammoType);
+        ammoText.text = currentAmmo.ToString();
     }
 }

@@ -310,6 +310,7 @@ MonoBehaviour:
   range: 30
   damage: 10
   shotDelay: 0.2
+  ammoText: {fileID: 0}
 --- !u!114 &-4892813047278118756
 MonoBehaviour:
   m_ObjectHideFlags: 0
