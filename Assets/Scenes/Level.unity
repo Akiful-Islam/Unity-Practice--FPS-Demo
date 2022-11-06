@@ -390,7 +390,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2138787580}
+  - {fileID: 2136967420}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -586,7 +586,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1075690081909463814, guid: 53cb16869316baf49a7605bddd21afad, type: 3}
   m_PrefabInstance: {fileID: 2136170258}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2138787579
+--- !u!1 &2136967419
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -594,9 +594,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2138787580}
-  - component: {fileID: 2138787582}
-  - component: {fileID: 2138787581}
+  - component: {fileID: 2136967420}
+  - component: {fileID: 2136967422}
+  - component: {fileID: 2136967421}
   m_Layer: 0
   m_Name: Terrain
   m_TagString: Untagged
@@ -604,13 +604,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!4 &2138787580
+--- !u!4 &2136967420
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2138787579}
+  m_GameObject: {fileID: 2136967419}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -619,27 +619,27 @@ Transform:
   m_Father: {fileID: 1890990897}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!154 &2138787581
+--- !u!154 &2136967421
 TerrainCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2138787579}
+  m_GameObject: {fileID: 2136967419}
   m_Material: {fileID: 0}
   m_Enabled: 1
-  m_TerrainData: {fileID: 15600000, guid: 73d913388f1ae1d4ca143baecb2d0d76, type: 2}
+  m_TerrainData: {fileID: 15600000, guid: e956617e9bd80dc4aac0e27ce24532a0, type: 2}
   m_EnableTreeColliders: 1
---- !u!218 &2138787582
+--- !u!218 &2136967422
 Terrain:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2138787579}
+  m_GameObject: {fileID: 2136967419}
   m_Enabled: 1
   serializedVersion: 6
-  m_TerrainData: {fileID: 15600000, guid: 73d913388f1ae1d4ca143baecb2d0d76, type: 2}
+  m_TerrainData: {fileID: 15600000, guid: e956617e9bd80dc4aac0e27ce24532a0, type: 2}
   m_TreeDistance: 5000
   m_TreeBillboardDistance: 50
   m_TreeCrossFadeLength: 5
@@ -655,7 +655,7 @@ Terrain:
   m_DrawTreesAndFoliage: 1
   m_StaticShadowCaster: 0
   m_ReflectionProbeUsage: 1
-  m_MaterialTemplate: {fileID: 18858803709778759, guid: d870b4f0cba458640b29cda304d40186, type: 3}
+  m_MaterialTemplate: {fileID: 10652, guid: 0000000000000000f000000000000000, type: 0}
   m_BakeLightProbesForTrees: 1
   m_PreserveTreePrototypeLayers: 0
   m_DeringLightProbesForTrees: 1
@@ -685,15 +685,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 97627543989291187, guid: 623259de510a3224481ba840145b6639, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15
+      value: 145
       objectReference: {fileID: 0}
     - target: {fileID: 97627543989291187, guid: 623259de510a3224481ba840145b6639, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 25
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 97627543989291187, guid: 623259de510a3224481ba840145b6639, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 270
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 97627543989291187, guid: 623259de510a3224481ba840145b6639, type: 3}
       propertyPath: m_LocalRotation.w
@@ -759,6 +759,10 @@ PrefabInstance:
     - target: {fileID: 4398820298397749988, guid: 94222dab07f132446ac8b9af3ab57faa, type: 3}
       propertyPath: m_Name
       value: UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 4398820298397749988, guid: 94222dab07f132446ac8b9af3ab57faa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4398820298397749995, guid: 94222dab07f132446ac8b9af3ab57faa, type: 3}
       propertyPath: m_RootOrder
