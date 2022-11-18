@@ -27,7 +27,15 @@ public class EnemyHealth : MonoBehaviour
             return;
 
         isDead = true;
-        GetComponent<Animator>().SetTrigger("Die");
+        GetComponent<Animator>().SetTrigger("Dead");
+        GetComponent<EnemyAI>().enabled = false;
+        StartCoroutine(DestroyEnemyObject());
+    }
+
+    private IEnumerator DestroyEnemyObject()
+    {
+        yield return new WaitForSeconds(5f);
+        Destroy(gameObject);
     }
 
 }

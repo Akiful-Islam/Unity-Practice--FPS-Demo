@@ -8,13 +8,13 @@ public class DeathHandler : MonoBehaviour
 
     private void Awake()
     {
-        gameOverCanvas.enabled = false;
-
+        gameOverCanvas.gameObject.SetActive(false);
     }
 
     public void HandleDeath()
     {
-        gameOverCanvas.enabled = true;
+        SceneLoader.isPaused = true;
+        gameOverCanvas.gameObject.SetActive(true);
         Time.timeScale = 0;
         FindObjectOfType<WeaponSwitcher>().enabled = false;
         Cursor.lockState = CursorLockMode.None;

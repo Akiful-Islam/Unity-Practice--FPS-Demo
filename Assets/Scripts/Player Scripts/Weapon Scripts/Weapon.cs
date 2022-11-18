@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor.SearchService;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
@@ -23,8 +24,11 @@ public class Weapon : MonoBehaviour
     }
     void Update()
     {
-        HandleShooting();
-        UpdateAmmoText();
+        if (!SceneLoader.isPaused)
+        {
+            HandleShooting();
+            UpdateAmmoText();
+        }
     }
 
 
