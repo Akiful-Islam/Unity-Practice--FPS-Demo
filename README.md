@@ -1,11 +1,16 @@
 # Zombie FPS
 
 #### Description
-A 3D zombie FPS game made with Unity 2021. The project was built using the help of resources provided by GameDev.tv. 
+A 3D zombie FPS game made with Unity 2021. The player can utilize various weapons to shoot and kill zombies, Collect pickups to increase ammo and die after certain amount of hits. Zombies can stay idle, get provoked by player, chase the player and attack them.
+
+The project was built using the help of resources provided by GameDev.tv. The project is yet unfinished and will be worked on further.
+
+<br/>
+
+__Note__: This project was created exclusively to help me learn and practice Unity Engine's intermediate concepts. There are no plans to commercialize or make money off of this project.
 
 ### Running The Project
-To run the project, open it with Unity 2021 or later and start the. The project is yet unfinished and will be worked on further.
-
+To run the project, open it with Unity 2021 or later and start the game in play mode.
 
 ## Features
 ### Assets
@@ -23,7 +28,8 @@ To run the project, open it with Unity 2021 or later and start the. The project 
 - Jump: Space
 - Shoot: Left Mouse Button
 - Zoom: Right Mouse Button
-- Change Weapons: 1 to 9 or Scroll Wheel
+- Change Weapons: 1 to 4 or Scroll Wheel
+- Pause/Resume: Escape
 
 ##### Zombie AI
 - Starts in idle mode and stays in that mode until provoked.
@@ -40,6 +46,6 @@ To run the project, open it with Unity 2021 or later and start the. The project 
 
 ## Future
 My final goal with this project is a create a playable demo that includes:
-- A UI to navigate around. 
+- A UI. 
 - Showing stats and player health using a HUD.
 - One fully finished level with an objective to finish.
