@@ -320,6 +320,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  healthText: {fileID: 0}
 --- !u!114 &845810808
 MonoBehaviour:
   m_ObjectHideFlags: 0

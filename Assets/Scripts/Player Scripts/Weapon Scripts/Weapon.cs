@@ -92,6 +92,6 @@ public class Weapon : MonoBehaviour
     private void UpdateAmmoText()
     {
         int currentAmmo = ammoSlot.GetCurrentAmmo(ammoType);
-        ammoText.text = currentAmmo.ToString();
+        ammoText.text = ammoType.ToString() + ": " + currentAmmo.ToString();
     }
 }

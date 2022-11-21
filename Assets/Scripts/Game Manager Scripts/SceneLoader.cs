@@ -40,9 +40,10 @@ public class SceneLoader : MonoBehaviour
 
     public void Restart()
     {
+        FindObjectOfType<WeaponSwitcher>().enabled = false;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        Time.timeScale = 1;
-        menuCanvas.gameObject.SetActive(false);
     }
     public void Quit()
     {
