@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,15 +9,15 @@ public class SceneLoader : MonoBehaviour
 {
     [SerializeField] Canvas pauseCanvas;
     [SerializeField] Canvas menuCanvas;
+    [SerializeField] Canvas statsCanvas;
+    [SerializeField] Canvas reticleCanvas;
+    [SerializeField] Camera menuCamera, gameplayCamera;
 
     public static bool isPaused;
 
     private void Awake()
     {
-        Time.timeScale = 0;
-        isPaused = true;
-        menuCanvas.gameObject.SetActive(true);
-        pauseCanvas.gameObject.SetActive(false);
+        StartMenu();
     }
 
     private void Update()
@@ -37,6 +38,34 @@ public class SceneLoader : MonoBehaviour
         }
     }
 
+    private void StartMenu()
+    {
+        menuCanvas.gameObject.SetActive(true);
+        menuCamera.enabled = true;
+        gameplayCamera.enabled = false;
+        Time.timeScale = 0;
+        isPaused = true;
+        menuCanvas.gameObject.SetActive(true);
+        pauseCanvas.gameObject.SetActive(false);
+        statsCanvas.gameObject.SetActive(false);
+        reticleCanvas.gameObject.SetActive(false);
+    }
+
+    public void StartGame()
+    {
+        isPaused = false;
+        gameplayCamera.enabled = true;
+        menuCamera.enabled = false;
+        menuCamera.gameObject.SetActive(false);
+        menuCanvas.gameObject.SetActive(false);
+        reticleCanvas.gameObject.SetActive(true);
+        statsCanvas.gameObject.SetActive(true);
+        FindObjectOfType<WeaponSwitcher>().enabled = false;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        Time.timeScale = 1;
+    }
+
 
     public void Restart()
     {
@@ -53,7 +82,7 @@ public class SceneLoader : MonoBehaviour
     public void Pause()
     {
         isPaused = true;
-        pauseCanvas.gameObject.SetActive(true);
+        ToggleCanvases(isPaused);
         FindObjectOfType<WeaponSwitcher>().enabled = false;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
@@ -63,11 +92,17 @@ public class SceneLoader : MonoBehaviour
     public void Resume()
     {
         isPaused = false;
-        menuCanvas.gameObject.SetActive(false);
-        pauseCanvas.gameObject.SetActive(false);
+        ToggleCanvases(isPaused);
         FindObjectOfType<WeaponSwitcher>().enabled = true;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         Time.timeScale = 1;
+    }
+
+    private void ToggleCanvases(bool paused)
+    {
+        pauseCanvas.gameObject.SetActive(paused);
+        statsCanvas.gameObject.SetActive(!paused);
+        reticleCanvas.gameObject.SetActive(!paused);
     }
 }
