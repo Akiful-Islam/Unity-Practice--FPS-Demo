@@ -5,14 +5,11 @@ using UnityEngine;
 public class GameplayManager : MonoBehaviour
 {
     [SerializeField] Canvas completedCanvas;
-    private GameObject[] enemies;
-    private int enemiesLeft;
+    [SerializeField] private int enemiesLeft;
 
 
     private void Awake()
     {
-        enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        enemiesLeft = enemies.Length;
         completedCanvas.gameObject.SetActive(false);
     }
 
@@ -23,13 +20,7 @@ public class GameplayManager : MonoBehaviour
 
     private void CountEnemies()
     {
-        foreach (GameObject enemy in enemies)
-        {
-            if (enemy.GetComponent<EnemyHealth>().IsDead)
-            {
-                enemiesLeft--;
-            }
-        }
+        enemiesLeft = GameObject.FindGameObjectsWithTag("Enemy").Length;
         if (enemiesLeft < 1)
         {
             FinishLevel();

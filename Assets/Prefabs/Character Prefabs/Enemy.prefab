@@ -1646,8 +1646,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  provokeRange: 5
-  speed: 1
+  provokeRange: 10
+  speed: 2
 --- !u!114 &4455936818563727062
 MonoBehaviour:
   m_ObjectHideFlags: 0
